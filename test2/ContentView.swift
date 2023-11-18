@@ -9,10 +9,37 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var adddog = ""
+    
+    @State var dogs = ["Pomeranian", "Shitsuu", "Wolfdog"]
+    
     var body: some View {
-        Text("Hello, World!")
-    }
-}
+        VStack {
+            Text("Hello")
+        
+        HStack {
+            
+        TextField("Add more dog", text: $adddog)
+            
+        Button(action: {
+                self.dogs.append(self.adddog)
+            }){
+                Text("Add dog")
+            }
+            
+        }
+  
+        List(dogs, id: \.self) {person in Text(person)}
+  
+            Button(action: {
+                self.adddog = ""
+                
+            }){
+                Text("Remove")
+            }
+            
+}}}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
