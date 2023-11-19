@@ -33,10 +33,10 @@ struct ContentView: View {
         List(dogs, id: \.self) {person in Text(person)}
   
             Button(action: {
-                self.adddog = ""
+                self.dogs = [""]
                 
             }){
-                Text("Remove")
+                Text("Remove dogs")
             }
             
 }}}
